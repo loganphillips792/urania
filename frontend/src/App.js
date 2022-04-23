@@ -1,5 +1,3 @@
-import logo from './logo.svg';
-import './App.css';
 import { useState } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import variables from './variables';
@@ -13,19 +11,13 @@ import CameraScreen from './components/screens/CameraScreen';
 
 const Container = styled.div`
   height: 100%;
-  border: 2px solid green;
 `;
 
 const GlobalStyle = createGlobalStyle`
   ${variables}
 
-  html {
-    height: 100%;
-  }
-
   body {
     background-color: var(--dark-color);
-    height: 100%;
   }
 `;
 
@@ -56,7 +48,7 @@ const CameraIcon = styled(Icon)`
 `;
 
 const PageContainer = styled.div`
-  height: 100%;
+
 `;
 
 

@@ -2,13 +2,12 @@ import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-
+    color: var(--white);
 `;
 
 const MetricsContainer = styled.div`
     display: flex;
 `;
-
 
 const MetricContainer = styled.div`
     width: 100px;
