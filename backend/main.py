@@ -3,6 +3,7 @@ from flask import Flask
 from flask_cors import CORS
 import obd
 import logging
+import random
 
 app = Flask(__name__)
 CORS(app)
@@ -16,8 +17,8 @@ def hello_world():
 def metrics():
     app.logger.info("Logging")
     return {
-        "rpm": 2000,
-        "speed": 50
+        "rpm": random.randint(1000,10000),
+        "speed": random.randint(0, 200)
     }
 
 #def main():   
