@@ -1,13 +1,53 @@
+import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
 
 `;
 
+const MetricsContainer = styled.div`
+    display: flex;
+`;
+
+
+const MetricContainer = styled.div`
+    width: 100px;
+    height: 100px;
+    border: 2px solid orange;
+    flex-grow: 1;
+`;
+
+const RPM = styled(MetricContainer)`
+   
+`;
+
+const Speed = styled(MetricContainer)`
+
+`;
+
+
 const HomeScreen = () => {
+    const [metrics, setMetrics] = useState({});
+
+    useEffect(() => {
+        fetch("http://127.0.0.1:5000/metrics")
+            .then(response => response.json())
+            .then(data => {
+                console.log("DATA", data)
+                setMetrics(data);
+            })
+    }, [])
+
     return (
         <Container>
-            HOME
+            <MetricsContainer>
+                <RPM>
+                    RPM: {metrics['rpm']}
+                </RPM>
+                <Speed>
+                    SPEED: {metrics['speed']}
+                </Speed>
+            </MetricsContainer>
         </Container>
     )
 }

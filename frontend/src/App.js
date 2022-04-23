@@ -11,13 +11,21 @@ import MapScreen from './components/screens/MapScreen';
 import CameraScreen from './components/screens/CameraScreen';
 
 
-const Container = styled.div``;
+const Container = styled.div`
+  height: 100%;
+  border: 2px solid green;
+`;
 
 const GlobalStyle = createGlobalStyle`
   ${variables}
 
+  html {
+    height: 100%;
+  }
+
   body {
     background-color: var(--dark-color);
+    height: 100%;
   }
 `;
 
@@ -48,8 +56,7 @@ const CameraIcon = styled(Icon)`
 `;
 
 const PageContainer = styled.div`
-  border: 2px solid blue;
-
+  height: 100%;
 `;
 
 
